@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
     def show
       @user = User.find(params[:id])
+      @user_interests = UserInterest.all
     end
 
     def new
