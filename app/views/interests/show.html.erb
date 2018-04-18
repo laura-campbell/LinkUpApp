@@ -1,2 +1,10 @@
-<h1>Interests#show</h1>
-<p>Find me in app/views/interests/show.html.erb</p>
+<h1> <%= @interest.name %> </h1>
+
+<h2>Users who share this interest:<br></h2> <ul><%  @user_interests.each do |u| %>
+      <% if u.interest == @interest %>
+          <li><%= link_to u.user.username, user_path %>
+             <img src= '<%=u.user.image_url%>', height=50>
+          </li>
+      <% end %>
+    <% end %>
+      </ul>
