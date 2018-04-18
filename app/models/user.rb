@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_secure_password
   has_many :hosts
   has_many :host_link_ups, through: :hosts, source: :link_up
   has_many :user_interests
