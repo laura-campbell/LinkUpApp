@@ -3,7 +3,8 @@
 <h2>Forge a Link-Up!</h2>
 
 Host: <%= @current_user.username %>
-Guest: <%= User.find(params[:id]).username %>
+
+Guest: <%= @user.username %>
 
 <%= form_for @link_up do |f| %>
 <div>
@@ -12,7 +13,7 @@ Guest: <%= User.find(params[:id]).username %>
 </div>
 
 <div class="">
-  <%= f.label "location"%>
+  <%= f.label :location%>
   <%= f.collection_select(:location_id, @locations, :id, :name) %>
 </div>
 
@@ -22,6 +23,9 @@ Guest: <%= User.find(params[:id]).username %>
   <%= f.label :description %>
   <%= f.text_area :description, placeholder: "Provide some details" %>
 </div>
+
+<%= f.hidden_field :host_user_id, value: @current_user.id %>
+<%= f.hidden_field :guest_user_id, value: @user.id %>
 
 <%= f.submit "Create LinkUp", class: "btn btn-large btn-primary" %>
 <% end %>

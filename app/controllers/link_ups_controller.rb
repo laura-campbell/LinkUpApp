@@ -5,21 +5,21 @@ class LinkUpsController < ApplicationController
 
     def show
       @link_up = LinkUp.find(params[:id])
+      @guests = Guest.all
+      @host = User.find(session[:user_id])
     end
 
     def new
       @link_up = LinkUp.new
       @locations = Location.all
+      @current_user = current_user
     end
 
     def create
       @link_up = LinkUp.create(link_up_params)
-      if @link_up.valid?
+        @guest = Guest.create(user_id: params[:link_up][:guest_user_id], link_up_id: @link_up.id)
+        @host = Host.create(user_id: params[:link_up][:host_user_id], link_up_id: @link_up.id)
         redirect_to @link_up
-      else
-        flash[:errors] = @link_up.errors.full_messages
-        redirect_to new_link_up_path
-      end
     end
 
 

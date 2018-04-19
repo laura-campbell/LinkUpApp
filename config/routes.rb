@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   post "logout", to: "sessions#logout", as: "logout"
 
   root 'users#index', as: "/"
+
+  get "link_up", to: "guests#new"
+  post "link_up", to: "link_up#show"
 end
