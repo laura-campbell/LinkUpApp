@@ -1,11 +1,20 @@
 <h1><%= @user.username %></h1>
-  <p><img src= '<%=@user.image_url%>'></p>
-  <h4>Name: <%= @user.first_name %> <%= @user.last_name %></h4>
-  <h4>Email: <%= @user.email %></h4>
-  <h4><%= @user.bio %></h4><br>
-  <h4>Interests:<br> <%  @user_interests.each do |u| %>
-        <% if u.user == @user %>
-            <%= link_to u.interest.name, interest_path %><br>
-        <% end %>
-      <% end %></h4>
-  <h4><%= link_to 'Invite to a Link-Up', :controller=>'guests', :action=> 'new', :id=> params[:id], class: "btn btn-secondary"%></h4>
+<div class="row">
+
+  <div class="col-lg-3">
+
+    <img src= '<%=@user.image_url%>'>
+  </div>
+  <div class="col-lg-9">
+    <h4>Name: <%= @user.first_name %> <%= @user.last_name %></h4>
+    <h4>Email: <%= @user.email %></h4>
+    <h4><%= @user.bio %></h4><br>
+    <h4>Interests:<br>
+       <%  @user_interests.each do |u| %>
+          <% if u.user == @user %>
+              <%= link_to u.interest.name, interest_path %><br>
+          <% end %>
+        <% end %></h4>
+
+    </div>
+  </div>

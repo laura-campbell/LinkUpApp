@@ -32,20 +32,44 @@
 }
 
 .flatiron-bg {
-  background: url('flatiron-bg.jpg') no-repeat center center fixed;
-   -webkit-background-size: cover;
-   -moz-background-size: cover;
-   -o-background-size: cover;
-   background-size: cover;
+  background-color: #efefef;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
 }
+
+.flatiron-bg::after {
+  content: "";
+  height:100%;
+  width:100%;
+  background: url(flatiron-bg.jpg);
+  background-size:cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: .9;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position:fixed;
+  z-index: -1;
+  display:block;
+}
+
 .signup, .login {
 .form_container {
-  padding-top:5em;
   letter-spacing:1px;
   h2, label {
     text-shadow:2px 2px #000;
   }
   color:#fff;
+}
+h4 {
+  padding:1em 0;
 }
 h1, h2, h3, h4 {
   color:#fff;
@@ -60,6 +84,10 @@ h1, h2, h3, h4 {
 }
 
 footer {
+  &.row {
+    margin-left:0px;
+    margin-right:0px;
+  }
   color:#fff;
   background-color: #000;
   height:50px;
