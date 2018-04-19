@@ -11,12 +11,9 @@ class UsersController < ApplicationController
 
     def new
       @user = User.new
-<<<<<<< HEAD
       @interest = Interest.new
       @interests = Interest.all
-=======
-  
->>>>>>> stylingApp
+
     end
 
     def create
