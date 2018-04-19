@@ -1,4 +1,5 @@
 <h1><%= @user.username %></h1>
+
 <div class="row">
 
   <div class="col-lg-3">
@@ -6,15 +7,18 @@
     <img src= '<%=@user.image_url%>'>
   </div>
   <div class="col-lg-9">
+
     <h4>Name: <%= @user.first_name %> <%= @user.last_name %></h4>
     <h4>Email: <%= @user.email %></h4>
     <h4><%= @user.bio %></h4><br>
-    <h4>Interests:<br>
-       <%  @user_interests.each do |u| %>
+    <h4>Interests (click on one to see other users who share this interest):<br> <%  @user_interests.each do |u| %>
           <% if u.user == @user %>
-              <%= link_to u.interest.name, interest_path %><br>
+              <%= link_to u.interest.name, interest_path(u.interest) %><br>
           <% end %>
         <% end %></h4>
 
+  <% if @user.id != session[:user_id] %>
+    <h4><%= link_to 'Invite to a Link-Up', :controller=>'guests', :action=> 'new', :id=> params[:id], class: "btn btn-secondary"%></h4>
+  <% end %>
     </div>
   </div>

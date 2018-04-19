@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1> -<%= @interest.name %>- </h1>
 
 <h2>Users who share this interest:</h2>
@@ -17,6 +18,17 @@
           </div>
 
         <% end %>
+=======
+<h1> -<%= @interest.name %>- </h1><br>
+
+<h4>Users who share this interest:</h4><br>
+<ul><%  @user_interests.each do |u| %>
+      <% if u.interest == @interest && u.user.id != session[:user_id] %>
+          <div><h4><%= u.user.username%></h4>
+          <img src= '<%=u.user.image_url%>', height=200><br></br>
+          <%= link_to 'View Profile', u.user, class: "btn btn-secondary" %>
+        </div><br>
+>>>>>>> f3471809e47505da5878fc58a68ce2b7376cd3c2
       <% end %>
 
     </div>
