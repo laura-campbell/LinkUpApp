@@ -5,6 +5,7 @@ class InterestsController < ApplicationController
 
   def show
     @interest = Interest.find(params[:id])
+    @user = User.find(params[:id])
     @user_interests = UserInterest.all
   end
 

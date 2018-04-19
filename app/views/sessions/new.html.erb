@@ -2,6 +2,8 @@
   <h3><%= flash[:errors] %></h3>
 <% end %>
 
+<h1> Welcome to Link Up! Please login or signup to get started.</h1>
+
 <%= form_tag sessions_path do %>
   <%= label_tag :username %>
   <%= text_field_tag :username %>

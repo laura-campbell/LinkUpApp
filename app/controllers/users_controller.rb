@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
     def index
-      @users = User.all
+      @current_user = User.find_by_id(session[:current_user_id])
     end
 
     def show
@@ -16,7 +16,6 @@ class UsersController < ApplicationController
     end
 
     def create
-
       @user = User.create(user_params)
       if @user.valid?
         user_params[:i_ids].each do |i|
@@ -25,10 +24,6 @@ class UsersController < ApplicationController
       else
         redirect_to signup_path
       end
-    end
-
-    def create_user_interest
-      @user_interest = UserInterest.create()
     end
 
   private
