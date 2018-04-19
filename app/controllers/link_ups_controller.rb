@@ -25,6 +25,7 @@ class LinkUpsController < ApplicationController
 
     def edit
       @link_up = LinkUp.find(params[:id])
+      @locations = Location.all
     end
 
     def update
