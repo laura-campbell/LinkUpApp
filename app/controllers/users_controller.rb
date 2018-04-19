@@ -13,10 +13,6 @@ class UsersController < ApplicationController
       @user = User.new
       @interest = Interest.new
       @interests = Interest.all
-<<<<<<< HEAD
-=======
-
->>>>>>> FormStyles
     end
 
     def create
