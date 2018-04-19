@@ -9,6 +9,9 @@ class HostsController < ApplicationController
 
   def new
     @host = Host.new
+    @link_up = LinkUp.new
+    @locations = Location.all
+    @current_user = current_user
   end
 
   def create

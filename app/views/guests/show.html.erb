@@ -1,2 +1,11 @@
-<h1>Guests#show</h1>
-<p>Find me in app/views/guests/show.html.erb</p>
+<h1><%= @guest.username %></h1>
+  <p><img src= '<%=@guest.image_url%>'></p>
+  <h4>Name: <%= @guest.first_name %> <%= @guest.last_name %></h4>
+  <h4>Email: <%= @guest.email %></h4>
+  <h4><%= @guest.bio %></h4><br>
+  <h4>Interests:<br> <%  @user_interests.each do |u| %>
+            <% if u.user == @guest %>
+            <%= link_to u.interest.name, interest_path %><br>
+        <% end %>
+      <% end %></h4>
+  <h4><%= link_to 'Invite to a Link-Up', new_guest_path, class: "btn btn-secondary" %></h4>
