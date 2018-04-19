@@ -7,5 +7,5 @@ Rails.application.routes.draw do
 
   post "logout", to: "sessions#logout", as: "logout"
 
-
+  root 'users#index', as: "/"
 end
