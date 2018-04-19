@@ -1,2 +1,6 @@
-<h1>LinkUps#show</h1>
-<p>Find me in app/views/link_ups/show.html.erb</p>
+<h1> <%= @link_up.name %> </h1><br>
+
+<h4><%= @link_up.location.name %></h4><br>
+<h4>Date: <%= @link_up.datetime.strftime("%B") %> <%= @link_up.datetime.strftime("%y") %>, <%= @link_up.datetime.strftime("%Y") %></h4><br>
+<h4>Time: <%= @link_up.datetime.strftime("%I") %>:<%= @link_up.datetime.strftime("%M") %> <%= @link_up.datetime.strftime("%p") %></h4><br>
+<h4>Description: <%= @link_up.description %></h4><br>

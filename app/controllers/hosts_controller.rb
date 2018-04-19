@@ -13,12 +13,8 @@ class HostsController < ApplicationController
 
   def create
     @host = Host.create(host_params)
-    if @host.valid?
-      redirect_to @host
-    else
-      flash[:errors] = @host.errors.full_messages
-      redirect_to new_host_path
-    end
+    @link_up = @host.linkup
+    redirect_to @link_up
   end
 
   def edit

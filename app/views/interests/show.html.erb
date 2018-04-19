@@ -1,2 +1,15 @@
-<h1>Interests#show</h1>
-<p>Find me in app/views/interests/show.html.erb</p>
+<h1> -<%= @interest.name %>- </h1><br>
+
+<h4>Users who share this interest:</h4><br>
+<ul><%  @user_interests.each do |u| %>
+      <% if u.interest == @interest && u.user != @user %>
+          <div><h4><%= u.user.username%></h4>
+          <img src= '<%=u.user.image_url%>', height=200><br></br>
+          <%= link_to 'View Profile', u.user, class: "btn btn-secondary" %>
+          <%= link_to 'Invite to a Link-Up', new_link_up_path, class: "btn btn-secondary" %>
+        </div><br>
+      <% end %>
+    <% end %>
+  </ul><br>
+
+      <h4><%= link_to 'Back to My Profile', @user, class: "btn btn-primary"%><br></h4>
