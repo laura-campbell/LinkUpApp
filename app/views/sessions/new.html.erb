@@ -2,12 +2,12 @@
   <h3><%= flash[:errors] %></h3>
 <% end %>
 
-<h1> Welcome to Link Up! Please login or signup to get started.</h1>
+<h4> Welcome Back! Enter your login information below: </h4><br>
 
 <%= form_tag sessions_path do %>
   <%= label_tag :username %>
   <%= text_field_tag :username %>
   <%= label_tag :password %>
   <%= password_field_tag :password %>
-  <%= submit_tag %>
+  <%= submit_tag "Login" %>
 <% end %>

@@ -1,10 +1,10 @@
-<h1>Welcome to <%= @user.username %>'s Profile!</h1>
+<h1><%= @user.username %></h1>
   <p><img src= '<%=@user.image_url%>'></p>
-  <h2>Name: <%= @user.first_name %> <%= @user.last_name %></h2>
-  <h3>Email: <%= @user.email %></h3>
-  <p><%= @user.bio %></p>
-  <p>Interests:<br> <%  @user_interests.each do |u| %>
+  <h4>Name: <%= @user.first_name %> <%= @user.last_name %></h4>
+  <h4>Email: <%= @user.email %></h4>
+  <h4><%= @user.bio %></h4><br>
+  <h4>Interests:<br> <%  @user_interests.each do |u| %>
         <% if u.user == @user %>
             <%= link_to u.interest.name, interest_path %><br>
         <% end %>
-      <% end %>
+      <% end %></h4>
