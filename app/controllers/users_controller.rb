@@ -1,12 +1,15 @@
 class UsersController < ApplicationController
 
     def index
-      @current_user = User.find_by_id(session[:current_user_id])
+      @users = User.all
     end
 
     def show
       @user = User.find(params[:id])
       @user_interests = UserInterest.all
+      @link_ups = LinkUp.all
+      @host = Host.find_by(user_id: params[:id])
+      @guest = Guest.find_by(user_id: params[:id])
     end
 
     def new

@@ -15,7 +15,20 @@
           <% if u.user == @user %>
               <%= link_to u.interest.name, interest_path(u.interest) %><br>
           <% end %>
-        <% end %></h4>
+        <% end %>
+      </h4>
+      <p>You are a host of:
+      <strong> <%= @host.link_up.name %></strong> in
+      <strong><%= @host.link_up.location.name %></strong> on
+      <strong><%= @host.link_up.datetime.strftime("%A, %b %d, %Y at %I:%M %p") %></strong>
+      </p>
+
+    <p>You are a guest of:
+  <strong><%= @guest.link_up.name %></strong>
+  in
+  <strong> <%= @guest.link_up.location.name %></strong> on
+    <strong> <%= @guest.link_up.datetime.strftime("%A, %b %d, %Y at %I:%M %p") %></strong>
+</p>
 
   <% if @user.id != session[:user_id] %>
     <h4><%= link_to 'Invite to a Link-Up', :controller=>'guests', :action=> 'new', :id=> params[:id], class: "btn btn-secondary"%></h4>
