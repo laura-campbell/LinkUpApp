@@ -2,7 +2,7 @@
 
 <h4>Users who share this interest:</h4><br>
 <ul><%  @user_interests.each do |u| %>
-      <% if u.interest == @interest && u.user != @user %>
+      <% if u.interest == @interest && u.user.id != session[:user_id] %>
           <div><h4><%= u.user.username%></h4>
           <img src= '<%=u.user.image_url%>', height=200><br></br>
           <%= link_to 'View Profile', u.user, class: "btn btn-secondary" %>

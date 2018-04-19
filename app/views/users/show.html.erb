@@ -5,7 +5,7 @@
   <h4><%= @user.bio %></h4><br>
   <h4>Interests (click on one to see other users who share this interest):<br> <%  @user_interests.each do |u| %>
         <% if u.user == @user %>
-            <%= link_to u.interest.name, interest_path %><br>
+            <%= link_to u.interest.name, interest_path(u.interest) %><br>
         <% end %>
       <% end %></h4>
 
