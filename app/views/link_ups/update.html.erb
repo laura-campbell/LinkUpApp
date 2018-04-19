@@ -1,2 +1,13 @@
-<h1>LinkUps#update</h1>
-<p>Find me in app/views/link_ups/update.html.erb</p>
+<h1> <%= @link_up.name %> </h1><br>
+
+<h4>Location: <%= @link_up.location.name %></h4><br>
+<h4>Date: <%= @link_up.datetime.strftime("%B") %> <%= @link_up.datetime.strftime("%y") %>, <%= @link_up.datetime.strftime("%Y") %></h4><br>
+<h4>Time: <%= @link_up.datetime.strftime("%I") %>:<%= @link_up.datetime.strftime("%M") %> <%= @link_up.datetime.strftime("%p") %></h4><br>
+<h4>Description: <%= @link_up.description %></h4><br>
+<h4>Host: <%= link_to @host.username, @host %></h4><br>
+
+<% @guests.each do |g| %>
+      <% if g.link_up_id == @link_up.id %>
+            <h4>Guest: <%= link_to g.user.username, g.user %></h4>
+      <% end %>
+<% end %>
