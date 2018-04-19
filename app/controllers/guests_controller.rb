@@ -11,21 +11,22 @@ class GuestsController < ApplicationController
   end
 
   def new
-    @guest = User.find(params[:id])
-    @link_up = LinkUp.new
     @locations = Location.all
     @current_user = current_user
+    @link_up = LinkUp.new
+    @user = User.find(params[:id])
   end
 
-  def create
-    @guest = Guest.create(guest_params)
-    if @guest.valid?
-      redirect_to @link_up
-    else
-      flash[:errors] = @guest.errors.full_messages
-      redirect_to new_guest_path
-    end
-  end
+  # def create
+  #   byebug
+  #   @guest = Guest.create(guest_params)
+  #   if @guest.valid?
+  #     redirect_to @link_up
+  #   else
+  #     flash[:errors] = @guest.errors.full_messages
+  #     redirect_to new_guest_path
+  #   end
+  # end
 
   def edit
     @guest = Guest.find(params[:id])
