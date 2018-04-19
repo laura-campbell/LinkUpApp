@@ -24,6 +24,10 @@
  }
 
  .btn.btn-primary {
+   &:hover {
+  cursor: pointer;
+  background-color:#00C6FF;
+}
   background-color: #00b3e6;
 }
 
@@ -34,19 +38,30 @@
    -o-background-size: cover;
    background-size: cover;
 }
-
-.new .form_container {
+.signup, .login {
+.form_container {
+  padding-top:5em;
   letter-spacing:1px;
   h2, label {
     text-shadow:2px 2px #000;
   }
   color:#fff;
 }
+.jumbotron {
+  background-color: transparent;
+}
 
+}
 .bg-dark {
     background-color: #000 !important;
 }
 
 footer {
   color:#fff;
+  background-color: #000;
+  height:50px;
+  position: fixed;
+  bottom:0;
+  width:100%;
+  padding-top:15px;
 }
