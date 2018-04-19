@@ -4,17 +4,23 @@ class GuestsController < ApplicationController
   end
 
   def show
-    @guest = Guest.find(params[:id])
+    @guest = Guest.new
+    @guest.user = User.find(params[:id])
+    @guest.save
+    @user_interests = UserInterest.all
   end
 
   def new
-    @guest = Guest.new
+    @guest = User.find(params[:id])
+    @link_up = LinkUp.new
+    @locations = Location.all
+    @current_user = current_user
   end
 
   def create
     @guest = Guest.create(guest_params)
     if @guest.valid?
-      redirect_to @guest
+      redirect_to @link_up
     else
       flash[:errors] = @guest.errors.full_messages
       redirect_to new_guest_path

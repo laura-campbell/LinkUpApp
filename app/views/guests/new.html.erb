@@ -1,2 +1,28 @@
-<h1>Guests#new</h1>
-<p>Find me in app/views/guests/new.html.erb</p>
+<div class="form_container">
+
+<h2>Forge a Link-Up!</h2>
+
+Host: <%= @current_user.username %>
+Guest: <%= User.find(params[:id]).username %>
+
+<%= form_for @link_up do |f| %>
+<div>
+  <%= f.label :name %>
+  <%= f.text_field :name, placeholder: "Name this LinkUp!" %>
+</div>
+
+<div class="">
+  <%= f.label "location"%>
+  <%= f.collection_select(:location_id, @locations, :id, :name) %>
+</div>
+
+<div><%= f.datetime_select :datetime, ampm: true %> </div>
+
+<div>
+  <%= f.label :description %>
+  <%= f.text_area :description, placeholder: "Provide some details" %>
+</div>
+
+<%= f.submit "Create LinkUp", class: "btn btn-large btn-primary" %>
+<% end %>
+</div>

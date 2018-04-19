@@ -6,7 +6,6 @@
           <div><h4><%= u.user.username%></h4>
           <img src= '<%=u.user.image_url%>', height=200><br></br>
           <%= link_to 'View Profile', u.user, class: "btn btn-secondary" %>
-          <%= link_to 'Invite to a Link-Up', new_link_up_path, class: "btn btn-secondary" %>
         </div><br>
       <% end %>
     <% end %>

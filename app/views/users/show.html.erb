@@ -8,3 +8,4 @@
             <%= link_to u.interest.name, interest_path %><br>
         <% end %>
       <% end %></h4>
+  <h4><%= link_to 'Invite to a Link-Up', :controller=>'guests', :action=> 'new', :id=> params[:id], class: "btn btn-secondary"%></h4>
