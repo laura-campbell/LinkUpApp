@@ -19,7 +19,9 @@
 
  body {
  font-family: 'Raleway', sans-serif;
+ font-weight: 900;
  background-color: #000;
+ font-size: large;
 
  }
 
@@ -37,7 +39,6 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
 }
 
 .flatiron-bg::after {
@@ -50,7 +51,7 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  opacity: .9;
+  opacity: .2;
   top: 0;
   left: 0;
   bottom: 0;
@@ -64,15 +65,14 @@
 .form_container {
   letter-spacing:1px;
   h2, label {
-    text-shadow:2px 2px #000;
   }
-  color:#fff;
+  color:#000;
 }
 h4 {
   padding:1em 0;
 }
 h1, h2, h3, h4 {
-  color:#fff;
+  color:#000;
 }
 .jumbotron {
   background-color: transparent;

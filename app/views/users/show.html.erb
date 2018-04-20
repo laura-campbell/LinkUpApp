@@ -51,8 +51,16 @@
     <i> <%= @guest.link_up.datetime.strftime("%A, %b %d, %Y at %I:%M %p") %></i>]
 </h4><br>
       <% end %>
+
   <% if @user.id != session[:user_id] %>
     <h3><%= link_to "<button>Invite to a Link-Up</button>".html_safe, :controller=>'guests', :action=> 'new', :method=> 'get', :id=> params[:id]%></h3>
   <% end %>
+
+  <% if @user.id == session[:user_id] %>
+
+  <h3><%= link_to "<button>Edit Profile</button>".html_safe, edit_user_path(@user) %></h3>
+
+  <h3><%= button_to "Delete Profile", {:controller=>'users', :action=> 'destroy'}, :method => :delete %></h3>
+<% end %>
     </div>
   </div>

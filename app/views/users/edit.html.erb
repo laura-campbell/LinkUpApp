@@ -1,2 +1,43 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+
+<div class="form_container col-md-4 offset-md-4">
+  <h2>Edit Profile</h2>
+<%= form_for @user do |f| %>
+<div class="form-group"><%= f.label :first_name %>
+  <%= f.text_field :first_name, {:class => 'form-control'} %>
+</div>
+
+  <div class="form-group">
+     <%= f.label :last_name %>
+    <%= f.text_field :last_name, {:class => 'form-control'} %>
+    </div>
+
+  <div class="form-group">
+     <%= f.label :email %>
+    <%= f.text_field :email, {:class => 'form-control'} %>
+  </div>
+
+  <div class="form-group"><%= f.label :username %>
+    <%= f.text_field :username, {:class => 'form-control'} %>
+  </div>
+
+  <div class="form-group"><%= f.label :password %>
+    <%= f.password_field :password, {:class => 'form-control'} %>
+  </div>
+
+  <div class="form-group">  <%= f.label "Profile Photo" %>
+    <%= f.text_field :image_url, placeholder: "Copy image url here", :class => 'form-control' %>
+  </div>
+
+<div class="form-group">
+<%= f.label :bio %>
+  <%= f.text_area :bio, {:class => 'form-control'} %>
+  </div>
+<!-- #remove interests?
+#add interests in text field? -->
+<%= f.label :interests %><br>
+<%= f.collection_check_boxes :interest_ids, @interests, :id, :name %>
+
+
+    <%= f.submit :class => 'btn btn-block btn-primary' %>
+
+<% end %>

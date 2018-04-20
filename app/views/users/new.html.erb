@@ -1,3 +1,6 @@
+
+
+
 <div class="form_container col-md-4 offset-md-4">
   <h2>Sign Up</h2>
 <%= form_for @user do |f| %>
@@ -15,6 +18,14 @@
     <%= f.text_field :email, {:class => 'form-control'} %>
   </div>
 
+  <div class="form-group"><%= f.label :username %>
+    <%= f.text_field :username, {:class => 'form-control'} %>
+  </div>
+
+  <div class="form-group"><%= f.label :password %>
+    <%= f.password_field :password, {:class => 'form-control'} %>
+  </div>
+
   <div class="form-group">  <%= f.label "Profile Photo" %>
     <%= f.text_field :image_url, placeholder: "Copy image url here", :class => 'form-control' %>
   </div>
@@ -24,13 +35,12 @@
   <%= f.text_area :bio, {:class => 'form-control'} %>
   </div>
 
-<div class="form-group">
+  <div class="form-group">
+<div class="form-check">
 <%= f.label :interests %><br>
-<% @interests.each do |i| %>
-  <%= check_box_tag 'i_ids[]', i.id -%>
-       <%= h i.name -%>
-  <% end %>
-  </div>
+<%= f.collection_check_boxes :interest_ids, @interests, :id, :name %>
+</div>
+</div>
 
     <%= f.submit :class => 'btn btn-block btn-primary' %>
 
