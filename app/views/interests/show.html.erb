@@ -2,25 +2,18 @@
 
 <h2>Users who share this interest:</h2>
 
-
   <div class="row">
   <%  @user_interests.each do |u| %>
-
-
-        <% if u.interest == @interest && u.user != @user %>
-
+        <% if u.interest == @interest && u.user != @current_user %>
             <div class="col-lg-3 col-md-6">
               <h4><%= u.user.username%></h4>
             <img src= '<%=u.user.image_url%>', height=200><br></br>
-            <%= link_to 'View Profile', u.user, class: "btn btn-secondary btn-block" %>
-            <%= link_to 'Invite to a Link-Up', new_link_up_path, class: "btn btn-secondary btn-block" %>
-
-
-          </div>
-
+            <%= link_to 'View Profile', u.user, class: "btn btn-secondary" %>
         <% end %>
       <% end %>
 
+
+<br></br>
+<%= link_to 'Back to My Profile', user_path(@current_user), class: "btn btn-primary"%>
+
 </div>
-<br><br>
-<h4><%= link_to 'Back to My Profile', @user, class: "btn btn-primary"%></h4>

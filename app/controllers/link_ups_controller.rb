@@ -29,7 +29,9 @@ class LinkUpsController < ApplicationController
     end
 
     def update
-      @link_up = LinkUp.update(link_up_params)
+      @link_up = LinkUp.find(params[:id])
+      @link_up.update(link_up_params)
+      redirect_to link_up_path(@link_up)
     end
 
     def destroy

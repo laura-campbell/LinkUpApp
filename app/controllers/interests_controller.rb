@@ -7,6 +7,7 @@ class InterestsController < ApplicationController
     @interest = Interest.find(params[:id])
     @user = User.find(params[:id])
     @user_interests = UserInterest.all
+    @current_user = User.find(session[:user_id])
   end
 
   def new
