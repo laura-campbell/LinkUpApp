@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20180418172150) do
   create_table "link_ups", force: :cascade do |t|
     t.string "name"
     t.integer "location_id"
+    t.string "address"
     t.text "description"
     t.datetime "datetime"
     t.datetime "created_at", null: false

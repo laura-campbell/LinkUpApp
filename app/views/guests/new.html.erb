@@ -1,28 +1,30 @@
 <div class="form_container">
 
-<h2>Forge a Link-Up!</h2>
+<br><h2><strong><font-color: "teal">Forge a Link-Up!</font></strong></h2><br>
 
-Host: <%= @current_user.username %>
+<h5><span style="background-color: lightgreen">Host:</span> <span style="background-color: white"><%= @current_user.username %></span>
+  <br></br>
 
-Guest: <%= @user.username %>
+  <span style="background-color: lightgreen">Guest:</span> <span style="background-color: white"><%= @user.username %></span></h5><br>
 
 <%= form_for @link_up do |f| %>
-<div>
-  <%= f.label :name %>
+<h5><div>
+  <span style="background-color: lightgreen"><%= f.label :name %>:</span>
   <%= f.text_field :name, placeholder: "Name this LinkUp!" %>
-</div>
+</div></h5><br>
 
-<div class="">
-  <%= f.label :location%>
+<div class=""><h5>
+  <span style="background-color: lightgreen"><%= f.label :location%>:</span>
   <%= f.collection_select(:location_id, @locations, :id, :name) %>
-</div>
+</div></h5>   <h5><span style="background-color: lightgreen"><%= f.label :address %>:<br></span>
+  <%= f.text_area :address, placeholder: "specific spot, cross-streets, etc." %>
+</h5><br>
 
-<div><%= f.datetime_select :datetime, ampm: true %> </div>
-
-<div>
-  <%= f.label :description %>
-  <%= f.text_area :description, placeholder: "Provide some details" %>
-</div>
+<div><h5><%= f.datetime_select :datetime, ampm: true %> </div></h5><br>
+<div><h5>
+  <span style="background-color: lightgreen"><%= f.label :description %>:<br></span>
+  <%= f.text_area :description, placeholder: "more details please!" %>
+</div></h5>
 
 <%= f.hidden_field :host_user_id, value: @current_user.id %>
 <%= f.hidden_field :guest_user_id, value: @user.id %>

@@ -1,4 +1,30 @@
-<br>
-<h1> Welcome to LinkUp! </h1>
+<style>
+.content {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
 
-<h4> <%=  link_to 'Login', sessions_path, class: "btn btn-primary"%> or <%=  link_to 'Signup', signup_path, class: "btn btn-primary" %> to get started </h4>
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
+</style>
+<body>
+
+<div class="content">
+
+<br>
+<h1> Welcome to LinkUp! </h1><br></br>
+<div class="center">
+<%= image_tag("linkedup.png", size: "250x250", :alt => "linkup") %><br></br>
+</div>
+<br></br><h4> <%=  link_to 'Login', sessions_path, class: "btn btn-primary"%> or <%=  link_to 'Signup', signup_path, class: "btn btn-primary" %> to get started</h4>
+
+</div>
+
+</body>

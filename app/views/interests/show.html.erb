@@ -1,19 +1,42 @@
-<h1> -<%= @interest.name %>- </h1>
+<style>
+.content {
+    margin-left: auto;
+    margin-right: auto;
+    columns: 2;
+    width: 75%;
+}
 
-<h2>Users who share this interest:</h2>
+.heading {
+      max-width: 500px;
+      margin: auto;
+}
+</style>
 
-  <div class="row">
+
+<body>
+
+  <div class="heading">
+
+  <br><h1 align="center"><span style="background-color: lightblue">-<%= @interest.name %>-</span></h1>
+
+  <h2 align="center">Users who share this interest:</h2><br></br>
+  </div>
+
+<div class="content" align="center">
+
   <%  @user_interests.each do |u| %>
         <% if u.interest == @interest && u.user != @current_user %>
             <div class="col-lg-3 col-md-6">
-              <h4><%= u.user.username%></h4>
+            <h3><%= u.user.username%><br></br>
             <img src= '<%=u.user.image_url%>', height=200><br></br>
-            <%= link_to 'View Profile', u.user, class: "btn btn-secondary" %>
+            <%= link_to 'View Profile', u.user, class: "btn btn-secondary" %></h3></div>
         <% end %>
       <% end %>
 
 
 <br></br>
-<%= link_to 'Back to My Profile', user_path(@current_user), class: "btn btn-primary"%>
 
 </div>
+</body>
+
+<%= link_to 'Back to My Profile', user_path(@current_user), class: "btn btn-primary"%>

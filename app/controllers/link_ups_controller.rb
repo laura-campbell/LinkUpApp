@@ -42,6 +42,6 @@ class LinkUpsController < ApplicationController
     private
 
     def link_up_params
-      params.require(:link_up).permit(:name, :location_id, :description, :datetime)
+      params.require(:link_up).permit(:name, :location_id, :description, :datetime, :address)
     end
 end

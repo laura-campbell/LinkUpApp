@@ -10,8 +10,7 @@
       <% if g.link_up_id == @link_up.id %>
             <h4>Guest: <%= link_to g.user.username, g.user %></h4>
       <% end %>
-<% end %>
-
+<% end %><br>
 
 
 <h4><%= link_to 'Edit LinkUp', edit_link_up_path, class: "btn btn-secondary"%></h4>
