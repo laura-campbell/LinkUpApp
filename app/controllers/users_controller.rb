@@ -24,7 +24,7 @@ class UsersController < ApplicationController
         params[:user][:interest_ids].each do |i|
           @user_interest = UserInterest.create(user_id: @user.id, interest_id: i)
         end
-        redirect_to @user
+        redirect_to login_path
       else
         redirect_to signup_path
       end
@@ -37,8 +37,8 @@ class UsersController < ApplicationController
 
     def update
       @user = User.find(params[:id])
-      @user = User.update(user_params)
-      redirect_to user_path(@user)
+      @user.update(user_params)
+      redirect_to @user
     end
 
     def destroy

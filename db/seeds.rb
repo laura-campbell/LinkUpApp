@@ -16,7 +16,7 @@ b_banner = User.create(first_name: "Bruce", last_name: "Banner", username: "The 
 r_richards = User.create(first_name: "Reed", last_name: "Richards", username: "Mr.Fantastic", email: "reedrichards@gmail.com", password: "1234", image_url: 'https://upload.wikimedia.org/wikipedia/en/b/ba/Reedr.jpg', bio: 'This is my bio.')
 n_summers = User.create(first_name: "Nathan", last_name: "Summers", username: "Cable", email: "nathansummmers@gmail.com", password: "1234", image_url: 'https://upload.wikimedia.org/wikipedia/en/1/18/Cable-promo-image.jpg', bio: 'This is my bio.')
 
-hiking = Interest.create(name: "Hiking")
+
 knitting = Interest.create(name: "Knitting")
 running = Interest.create(name: "Running")
 crime_fighting = Interest.create(name: "Crime Fighting")
