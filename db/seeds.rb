@@ -56,6 +56,8 @@ link_up2 = LinkUp.create(name: "Lifting", location_id: 2, description: "Making d
 link_up3 = LinkUp.create(name: "Tattoooing", location_id: 3, description: "Making dem painnzzzz", datetime: Time.now)
 link_up4 = LinkUp.create(name: "Laughing Convention", location_id: 6, description: "Make dem laughhsss", datetime: Time.now)
 link_up5 = LinkUp.create(name: "Brazilian Jiu Jitsu", location_id: 1, description: "Someone will get tapped", datetime: Time.now)
+link_up7 = LinkUp.create(name: "Drink", location_id: 4, description: "Some keg will get tapped", datetime: Time.now)
+link_up9 = LinkUp.create(name: "Clubbing", location_id: 5, description: "Bring your dancing shoes", datetime: Time.now)
 
 host1 = Host.create(link_up_id: 1, user_id:1)
 guest1 = Guest.create(link_up_id: 1, user_id:2)
@@ -71,3 +73,9 @@ guest4 = Guest.create(link_up_id: 4, user_id:8)
 
 host5 = Host.create(link_up_id: 5, user_id:2)
 guest5 = Guest.create(link_up_id: 5, user_id:1)
+
+host7 = Host.create(link_up_id: 7, user_id:1)
+guest7 = Guest.create(link_up_id: 7, user_id:2)
+
+host8 = Host.create(link_up_id: 8, user_id:1)
+guest8 = Guest.create(link_up_id: 8, user_id:5)
