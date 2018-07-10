@@ -20,5 +20,7 @@ This was a pair-programming student project, created in my second module for Fla
    ```$ rails db:create```
 
    ```$ rails db:migrate```
+   
+   ```$ rails db:seed```
 
    ```$ rails s```
