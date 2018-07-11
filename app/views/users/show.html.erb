@@ -9,7 +9,7 @@
 
 <div class="content">
 
-<h1><span style="background-color: lightblue"><%= @user.username %></span></h1><br>
+<h1><span><%= @user.username %></span></h1><br>
 </div>
 
 </body>
@@ -22,10 +22,10 @@
   </div>
   <div class="col-lg-9">
 
-    <h4><strong><font-color: "teal"><span style="background-color: lightgrey">Name:</span> <%= @user.first_name %> <%= @user.last_name %></strong></font></h4>
-    <h4><strong><font-color: "teal"><span style="background-color: lightgrey">Email:</span> <%= @user.email %></strong></span></font></h4>
-    <h4><strong><font-color: "teal"><span style="background-color: lightgrey">About Me:</span> <%= @user.bio %></strong></font></h4><br>
-    <h4><strong><font-color: "teal"><span style="background-color: lightblue">Interests:</span> <br></strong></font>
+    <h4><strong><font-color: "teal"><span>Name:</span> <%= @user.first_name %> <%= @user.last_name %></strong></font></h4>
+    <h4><strong><font-color: "teal"><span>Email:</span> <%= @user.email %></strong></span></font></h4>
+    <h4><strong><font-color: "teal"><span>About Me:</span> <%= @user.bio %></strong></font></h4><br>
+    <h4><strong><font-color: "teal"><span>Interests:</span> <br></strong></font>
     </h4><h5>(Click an interest to see users who share it)</h5>
 
       <h4><% @user_interests.each do |u| %>
@@ -35,16 +35,16 @@
         <% end %>
       </h4><br>
 
-      <h4><strong><font-color: "teal"><span style="background-color: lightblue">LinkUp History: </font></span></strong></h4>
+      <h4><strong><font-color: "teal"><span>LinkUp History: </font></span></strong></h4>
 
-      <h4><strong><font-color: "teal"><span style="background-color: lightgrey">Host of:</strong></span></font>
+      <h4><strong><font-color: "teal"><span>Host of:</strong></span></font>
         <% if @host != nil %>
           <strong> <%= link_to @host.link_up.name, @host.link_up %></strong>
           [<i><%= @host.link_up.location.name %></i> on
           <i><%= @host.link_up.datetime.strftime("%A, %b %d, %Y at %I:%M %p") %></i>]
         </h4>
           <% end %>
-    <h4><strong><font-color: "teal"><span style="background-color: lightgrey">Guest of:</strong></span></font>
+    <h4><strong><font-color: "teal"><span>Guest of:</strong></span></font>
       <% if @guest != nil %>
   <strong><%= link_to @guest.link_up.name, @guest.link_up %></strong>
   [<i><%= @guest.link_up.location.name %></i> on

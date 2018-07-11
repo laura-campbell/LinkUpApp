@@ -1,8 +1,5 @@
 <style>
-.content {
-    columns:3;
-    column-gap: 50px;
-}
+
 
 .heading {
       max-width: 500px;
@@ -21,27 +18,26 @@
 
   <div class="heading">
 
-  <br><h1 align="center"><span style="background-color: mediumblue"><font color="white">-<%= @interest.name %>-</font></span></h1>
+  <br><h1 align="center"><strong><%= @interest.name %></strong></h1>
 
-  <h2 align="center">Users who share this interest:</h2><br></br>
+  <br><h3 align="center"><small>Users who share this interest:</small></h3>
   </div>
 
-<div class="content" align="center">
-
+<div class="container-fluid">
+<div class="row">
   <%  @user_interests.each do |u| %>
         <% if u.interest == @interest && u.user != @current_user %>
-            <div class="item">
-            <h3><span style="background-color: teal"><font color="white"><%= u.user.username%></font></span><br>
-            <br><img src= '<%=u.user.image_url%>', height=200></br>
-            <br><%= link_to 'View Profile', u.user, class: "btn btn-secondary" %></h3>  </div>
+            <div align="center" class="col-md-4">
+            <div><br><br><h4 style="background-color: lightgrey"><br><%= u.user.username%></font>
+            <br><br><img src= '<%=u.user.image_url%>', height=100>
+            <br><br><%= link_to 'View Profile', u.user, class: "btn btn-secondary" %><br><br></h4></div><br></div>
         <% end %>
 
       <% end %>
-
-
+</div>
+</div>
 <br></br>
 
-</div>
 </body>
 
 <%= link_to 'Back to My Profile', user_path(@current_user), class: "btn btn-primary"%>
