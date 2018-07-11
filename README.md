@@ -1,24 +1,26 @@
-# README
+## LinkUp
+A companion finder based on shared interests, inspired by Meetup.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Motivation
+This was a pair-programming student project, created in my second module for Flatiron School's immersive web development program.
+ 
+## Screenshots
+![](LinkUpApp/public/LinkUpDemo.gif)
 
-Things you may want to cover:
+## Tech/framework used
 
-* Ruby version
+<b>Built with</b>
+- Ruby on Rails
 
-* System dependencies
+## Installation
 
-* Configuration
 
-* Database creation
+   ```$ bundle install```
 
-* Database initialization
+   ```$ rails db:create```
 
-* How to run the test suite
+   ```$ rails db:migrate```
+   
+   ```$ rails db:seed```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+   ```$ rails s```
