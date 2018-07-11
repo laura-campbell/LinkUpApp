@@ -3,9 +3,6 @@ A companion finder based on shared interests, inspired by Meetup.
 
 ## Motivation
 This was a pair-programming student project, created in my second module for Flatiron School's immersive web development program.
- 
-## Screenshots
-![](LinkUpApp/public/LinkUpDemo.gif)
 
 ## Tech/framework used
 
