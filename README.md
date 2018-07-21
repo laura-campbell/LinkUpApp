@@ -6,7 +6,18 @@ This was a pair-programming student project, created in my second module for Fla
  
 ## Screenshots
 
-![]()
+![](public/linkup1.png)
+
+![](public/linkup2.png)
+
+![](public/linkup3.png)
+
+![](public/linkup4.png)
+
+![](public/linkup5.png)
+
+![](public/linkup6.png)
+
 
 ## Tech/framework used
 
